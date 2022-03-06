@@ -1,0 +1,14 @@
+{
+  "cli": {
+    "entitiesDir": "src/entity"
+  },
+  "database": "craft_codeless_designer",
+  "entities": ["src/entity/*.ts", "src/tcg-generated/*.ts"],
+  "host": "localhost",
+  "logging": true,
+  "password": "root",
+  "port": 3307,
+  "synchronize": true,
+  "type": "mysql",
+  "username": "root"
+}
