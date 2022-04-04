@@ -28,7 +28,7 @@ export default class EntityChartController {
 
   public static async getEntityChartDetail(ctx: Context) {
     const entityChartRepository = getManager().getRepository(EntityChart);
-    const chart = await entityChartRepository.findOne(+ctx.params.id);
+    const chart = await entityChartRepository.findOneBy({ id: ctx.params.id });
 
     if (chart) {
       ctx.status = 200;
@@ -78,13 +78,12 @@ export default class EntityChartController {
     try {
       //TODO:等代码生成执行成功之后再返回，如果有报错，把出错信息返回到页面上。
       /**
-       * 调用 tcg (typeorm-code-generator) ，根据传入的 Entity Schema 动态生成代码。
-       * 只要 JSON 数据符合 typeorm 框架定义的 Schema 格式， tcg 就可以动态生成代码。
-       * 生成代码的实现细节请参考： https://github.com/craft-codeless-designer/typeorm-code-generator
+       * 调用 tcg (typeorm-code-generator) ，根据传入的 Entity Schema 动态生成实体类和 CRUD 接口。
+       * 只要 JSON 数据符合 typeorm 框架定义的 Schema 格式， tcg 就可以动态生成实体类和 CRUD 接口。
+       * 代码生成器的实现细节请参考： https://github.com/craft-codeless-designer/typeorm-code-generator
        * 默认把代码生成在 src/tcg-generated 目录中
        */
-      generate({ inputJSON: entitySchemaJson });
-      // generate({ inputJSON: 'test.json', distPath: './src/test/test2/test3', entity: true, repository: true });
+      generate({ inputJSON: JSON.stringify(entitySchemaJson) });
     } catch (e) {
       console.log(e);
     }

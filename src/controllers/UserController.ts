@@ -13,7 +13,7 @@ export default class UserController {
 
   public static async showUserDetail(ctx: Context) {
     const userRepository = getManager().getRepository(User);
-    const user = await userRepository.findOne(+ctx.params.id);
+    const user = await userRepository.findOneBy({ id: ctx.params.id });
 
     if (user) {
       ctx.status = 200;
@@ -25,8 +25,8 @@ export default class UserController {
 
   public static async updateUser(ctx: Context) {
     const userRepository = getManager().getRepository(User);
-    await userRepository.update(+ctx.params.id, ctx.request.body);
-    const updatedUser = await userRepository.findOne(+ctx.params.id);
+    await userRepository.update(ctx.params.id, ctx.request.body);
+    const updatedUser = await userRepository.findOneBy({ id: ctx.params.id });
 
     if (updatedUser) {
       ctx.status = 200;
