@@ -2548,10 +2548,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typeorm-code-generator@^1.0.36:
-  version "1.0.36"
-  resolved "https://registry.yarnpkg.com/typeorm-code-generator/-/typeorm-code-generator-1.0.36.tgz#7f566722228b0e8cfa20b0641b365dfd4a315b2a"
-  integrity sha512-PraT/SQmmm34BQXYN/ZvR5WEraCpEH9cOl0vAe4uq5TjDcIWYM+hNj6q5p83J8RDzfnUY9PJB0ky73SnY13PXw==
+typeorm-code-generator@^1.0.37:
+  version "1.0.37"
+  resolved "https://registry.yarnpkg.com/typeorm-code-generator/-/typeorm-code-generator-1.0.37.tgz#9e79cea81b4a17ddb2ac2ee77ea85e49780b2361"
+  integrity sha512-NIp2LbUVAW19fipzLyFXrx20xMqVZSYXUy3ZSz/6GnLZzUfqXHxaqgHZxI2n3mfHZtpQBDyniuaE3x8oBLM0Bw==
   dependencies:
     "@koa/cors" "^3.1.0"
     "@koa/router" "^10.0.0"
